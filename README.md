@@ -102,7 +102,7 @@ The physical prototype was tested successfully and the OLED displayed the differ
 
 ## Project Photos
 
-### Physical Prototype
+### Physical Prototype 
 
 ![Physical Prototype](images/ESP32_img1.jpeg)
 
@@ -118,7 +118,7 @@ The physical prototype was tested successfully and the OLED displayed the differ
 
 A video demonstration of the working physical prototype is included below.
 
-[Watch the Working Demonstration](DEMO/ESP32_minivid.mp4)
+[Watch the Working Demonstration](DEMO/ESP32_minivideo.mp4)
 
 ## Results
 
