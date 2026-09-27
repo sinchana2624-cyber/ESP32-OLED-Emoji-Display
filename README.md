@@ -1,30 +1,34 @@
-# ESP32-OLED-Emoji-Display
+# ESP32 OLED Emoji Display
 
 ## Overview
 
-This is an individual mini project using an ESP32, a 128×64 OLED
-display, and a push button to create an interactive emoji display.
+This project is an ESP32-based OLED Emoji Display that displays different facial expressions on a 128×64 SSD1306 OLED screen.
 
-The project was developed and tested using Wokwi and was also
-implemented and tested on a physical breadboard prototype.
+A push button is used to switch between six different emoji expressions. The project was first developed and tested using Wokwi simulation and then implemented and tested on a physical breadboard prototype.
 
 ## Objective
 
-To design and implement a simple interactive OLED display in which
-a push button is used to switch between different emoji expressions.
+The objective of this project is to understand:
+
+- ESP32 GPIO programming
+- I²C communication
+- OLED display interfacing
+- Push-button input handling
+- Basic embedded C/C++ programming
+- Hardware prototyping and testing
 
 ## Components Used
 
-- ESP32
-- 128×64 OLED Display (SSD1306)
+- ESP32 Development Board
+- 128×64 SSD1306 OLED Display
 - Push Button
 - Breadboard
 - Jumper Wires
 
 ## Software and Libraries
 
-- Wokwi
-- Arduino/C++
+- Arduino IDE
+- Wokwi Simulator
 - Adafruit GFX Library
 - Adafruit SSD1306 Library
 
@@ -32,32 +36,38 @@ a push button is used to switch between different emoji expressions.
 
 ### OLED Display
 
-| OLED Pin | ESP32 |
-|----------|-------|
-| SDA | GPIO 21 |
-| SCL | GPIO 22 |
-| VCC | 3.3V |
-| GND | GND |
+| OLED Pin | ESP32 Pin |
+|----------|-----------|
+| VCC      | 3.3V      |
+| GND      | GND       |
+| SDA      | GPIO 21   |
+| SCL      | GPIO 22   |
 
 ### Push Button
 
-| Button | ESP32 |
-|----------|-------|
-| Button input | GPIO 15 |
-| Other terminal | GND |
+| Button Connection | ESP32 |
+|-------------------|-------|
+| Input             | GPIO 15 |
+| Other terminal    | GND |
 
-The button uses the ESP32 internal pull-up resistor through
-`INPUT_PULLUP`.
+The push button is configured using the internal `INPUT_PULLUP` resistor.
 
-## Working
+## OLED Configuration
 
-The ESP32 communicates with the OLED display using the I²C
-communication protocol.
+- Display: SSD1306
+- Resolution: 128×64 pixels
+- Communication: I²C
+- I²C Address: `0x3C`
+- SDA: GPIO 21
+- SCL: GPIO 22
 
-When the push button is pressed, the program changes the displayed
-emoji.
+## How It Works
 
-The project contains six emoji states:
+When the ESP32 starts, the OLED display is initialized using I²C communication.
+
+The push button is connected to GPIO 15. Each button press changes the current emoji state.
+
+The project contains six different expressions:
 
 1. Happy
 2. Sad
@@ -66,72 +76,79 @@ The project contains six emoji states:
 5. Angry
 6. Laugh
 
-The state is incremented with each button press and cycles through
-the six emoji expressions.
+The program uses separate functions to draw each expression on the OLED display.
 
-## OLED Configuration
-
-- Resolution: 128 × 64 pixels
-- Controller: SSD1306
-- I²C Address: `0x3C`
-- SDA: GPIO 21
-- SCL: GPIO 22
+The display automatically updates whenever the button is pressed.
 
 ## Project Files
 
 - `sketch.ino` – Main ESP32 program
 - `diagram.json` – Wokwi circuit configuration
-- `libraries.txt` – Libraries used in the Wokwi project
+- `libraries.txt` – Libraries required for the Wokwi simulation
+- `images/` – Photos of the physical prototype and OLED output
+- `DEMO/` – Working demonstration video
 
 ## Wokwi Simulation
 
-The project was developed and tested using Wokwi before and during
-the implementation process.
+The project was first designed and tested using the Wokwi online simulator.
 
-Wokwi Simulation:
-
-PASTE YOUR WOKWI LINK HERE
+[Open Wokwi Simulation](PASTE_YOUR_WOKWI_LINK_HERE)
 
 ## Physical Prototype
 
-The project was implemented on a physical breadboard using an ESP32,
-OLED display, push button, and jumper wires.
+After testing the circuit in Wokwi, the project was implemented using an ESP32, SSD1306 OLED display, push button, breadboard, and jumper wires.
 
-The physical prototype was tested successfully, and the OLED display
-changes between six emoji expressions when the button is pressed.
+The physical prototype was tested successfully and the OLED displayed the different emoji expressions when the button was pressed.
 
 ## Project Photos
 
 ### Physical Prototype
 
-![Physical Prototype](ESP32_img1.jpeg)
+![Physical Prototype](images/ESP32_img1.jpeg)
 
 ### OLED Display
 
-![OLED Display](ESP32_img2.jpeg)
+![OLED Display](images/ESP32_img2.jpeg)
 
-### Circuit
+### Circuit and Working Output
 
-![Circuit](ESP32_img3.jpeg)
-
-### Working Output
-
-![Working Output](ESP32_img4.jpeg)
+![Circuit](images/ESP32_img3.jpeg)
 
 ## Working Demonstration
 
-A video demonstration of the working physical prototype is included
-in this repository.
+A video demonstration of the working physical prototype is included below.
+
+[Watch the Working Demonstration](DEMO/ESP32_minivid.mp4)
 
 ## Results
 
-The ESP32 successfully controls the OLED display, and pressing the
-push button cycles through six different emoji expressions.
+The ESP32 successfully controls the SSD1306 OLED display and switches between six different emoji expressions using a push button.
+
+The project was successfully tested in both:
+
+- Wokwi simulation
+- Physical breadboard prototype
 
 ## Future Improvements
 
-- Add more emoji expressions
-- Add emoji animations
-- Add multiple buttons
-- Improve button debouncing
-- Add more interactive features
+Possible improvements include:
+
+- Adding more emoji expressions
+- Adding animation effects
+- Adding multiple buttons for different controls
+- Implementing smoother button debouncing
+- Adding additional sensors or inputs
+- Creating a more interactive OLED user interface
+
+## Skills Demonstrated
+
+- ESP32
+- Embedded C/C++
+- GPIO Programming
+- I²C Communication
+- OLED Interfacing
+- Push Button Interfacing
+- Arduino IDE
+- Wokwi Simulation
+- Breadboard Prototyping
+- Hardware Testing
