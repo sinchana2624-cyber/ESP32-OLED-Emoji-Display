@@ -1,5 +1,4 @@
 # ESP32-OLED-Emoji-Display
-# ESP32 OLED Emoji Display
 
 ## Overview
 
