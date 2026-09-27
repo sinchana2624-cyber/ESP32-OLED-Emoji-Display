@@ -92,7 +92,7 @@ The display automatically updates whenever the button is pressed.
 
 The project was first designed and tested using the Wokwi online simulator.
 
-[Open Wokwi Simulation](PASTE_YOUR_WOKWI_LINK_HERE)
+[Open Wokwi Simulation](https://wokwi.com/projects/461726045235947521)
 
 ## Physical Prototype
 
